@@ -13,6 +13,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/comments/morning', function () {
+    return view('message.morning');
+});
+
+Route::get('/comments/afternoon', function () {
+    return view('message.afternoon');
+});
+
+Route::get('/comments/evening', function () {
+    return view('message.evening');
+});
+
+Route::get('/comments/night', function () {
+    return view('message.night');
+});
+
+Route::get('/comments/freeword/{free}', function ($free) {
+    return view('freeword.freeword',['freeword' => $free]);
 });
