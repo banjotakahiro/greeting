@@ -32,3 +32,10 @@ Route::get('/comments/night', function () {
 Route::get('/comments/freeword/{free}', function ($free) {
     return view('freeword.freeword',['freeword' => $free]);
 });
+
+Route::get('/comments/random', function () {
+    $random_message = ["おはよう","こんにちは","こんばんは","おやすみ"];
+    $random_number = array_rand($random_message);
+    $choice_random = $random_message[$random_number];
+    return view('random_message.random',['random' => $choice_random]);
+});
